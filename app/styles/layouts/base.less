@@ -1,0 +1,15 @@
+@theme: "../../../pafboots/cerulean/";
+@import (reference) "@{theme}variables.less";
+@import (reference) "@{theme}utilities.less";
+// Links
+a {
+    color: @link-color;
+    text-decoration: none;
+    &:hover, &:focus, &:visited {
+        color: @link-color;
+        text-decoration: @link-hover-decoration;
+    }
+    &:focus {
+        .tab-focus();
+    }
+}

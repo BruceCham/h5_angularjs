@@ -1,11 +1,13 @@
 ## user guide
 
 1. make sure that you have install nodejs
-2.
-   ```
+2. install bower
+___
+
+```
 	install bower
 	$ > npm install -g bower
-   ```
+```
 
 ##
 
