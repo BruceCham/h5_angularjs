@@ -1,0 +1,52 @@
+@theme: "../../../pafboots/cerulean/";
+@import (reference) "@{theme}variables.less";
+@import (reference) "@{theme}utilities.less";
+
+.trans-detail-page{
+    font-size: @font-size-base;
+    color: @gray-light;
+    .trans-detail-list{
+        border-top: 1px solid #dddddd;
+    }
+    .trans-detail-list ul{
+        margin-top: 20px;
+    }
+    .trans-detail-list ul li{
+    	border-bottom: 1px solid #dddddd;
+    	padding-bottom: 5px; 
+    }
+    .trans-detail-list ul li > div:nth-child(even){
+        font-size: @font-size-small;
+    }
+    .trans-detail-date{
+       color: @gray-lighter; 
+    }
+    
+    .trans-detail-list ul li > div:nth-child(odd){
+        color: @gray;
+        line-height: 25px;
+    }
+    .trans-detail-list li div{
+    	padding-top: 5px; 
+    }
+    
+    .income-amt-integer{
+        font-size: @font-size-large;
+        font-weight: 200;
+    }
+    .earnings-no-data img{
+        margin:0 auto;
+        width: 50%;
+        margin-top: 50px;
+    }
+    .no-data-msg{
+        font-size: @font-size-small;
+        color: @gray-lighter;
+        text-align: center;
+        margin-top: 20px;
+    }
+    span + sup{
+        margin-left: -3px;
+        font-size: 70%;
+    }
+}

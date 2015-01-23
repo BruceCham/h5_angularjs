@@ -1,0 +1,19 @@
+<div ng-controller="IncomeConfirmCtrl" class="income-confirm-page">
+    <form name="incomeConfirmForm">
+        <div class="input-group">
+            <span class="input-group-addon" for="exampleInputPassword1">支付密码</span>
+            <input type="{{inputType||'password'}}" required data-ng-model="payPwd" class="form-control" placeholder="请输入支付密码" ng-minlength="6">
+            <span class="tips hide"><span class="caret"></span></span>
+        </div>
+         <span class="change-pwd-type pull-right" ng-click="switchPwdShow()">
+             {{switchPwdText||'显示'}}
+         </span>
+        <p class="container-fluid forget-pwd pull-right">
+            忘记密码请拨打<span>4008880999</span>
+        </p>
+        
+        <div class="container-fluid button-container">
+            <button type="button" data-ng-disabled="!incomeConfirmForm.$valid || submitting" ng-click="doIncome()" class="btn btn-primary btn-block">确定</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,23 @@
+enyo.depends(
+	"captcha.css",
+	"error.css",
+	"home.css",
+	"selectAccount.css",
+	"incomeConfirm.css",
+	"incomeSuccess.css",
+	"paySuccess.css",
+	"payConfirm.css",
+	"transDetail.css",
+	"earnings.css",
+	"info.css",
+	"income.css",
+	"incomeFromBankCard.css",
+	"verifypaypass.css",
+	"setpaypass.css",
+	"regAccount.css",
+	"pay.css",
+	"payToBankCard.css",
+	"addNewBankCard.css",
+	"supportedBankCardList.css",
+	"viewBankCardDetail.css"
+);

@@ -1,0 +1,10 @@
+enyo.depends(
+	"CMAHttpRequest.js",
+	"EncryptService.js",
+	"DocService.js",
+	"UserService.js",
+	"OtpService.js",
+	"AssetService.js",
+	"ConfigService.js",
+	"BindCardService.js"
+);

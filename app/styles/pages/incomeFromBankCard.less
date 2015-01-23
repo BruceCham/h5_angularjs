@@ -1,0 +1,47 @@
+@theme: "../../../pafboots/cerulean/";
+@import (reference) "@{theme}variables.less";
+@import (reference) "@{theme}utilities.less";
+.income-from-bank-card-page{
+	.select-bank-text{
+		font-size: @font-size-base;
+		font-weight: 200;
+		color: @gray-light;
+	}
+	.select-bank{
+		overflow: hidden;
+		height: 90px;
+	}
+	.scroll{
+		overflow-x: scroll;
+		overflow-y: hidden;
+	}
+	.bank-items{
+		overflow: hidden;
+	}
+	.bank-item{
+		float: left;
+		margin-right: 10px;
+		border: 2px solid @brand-primary;
+		font-size: @font-size-large;
+   	 	color: @brand-primary;
+   	 	height: 90px;
+   	 	width: 130px;
+   	 	padding: 5px;
+	}
+	.bank-item div:nth-child(3){
+		font-size: @font-size-small;
+	}
+	.bank-active{
+		background-color: @brand-primary;
+		color: #fff;
+	}
+	.add-bankcard{
+		height: 90px;
+		line-height: 80px;
+	}
+	.plus{
+		font-style: normal;
+		font-size: 25px;
+		font-weight: bold;
+	}
+}

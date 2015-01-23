@@ -1,0 +1,35 @@
+@theme: "../../../pafboots/cerulean/";
+@import (reference) "@{theme}variables.less";
+@import (reference) "@{theme}mixins.less";
+@import (reference) "@{theme}utilities.less";
+.sharebox {
+    a {
+        .center-block;
+        color: @gray-light;
+        span {
+            display: block;
+            margin: 0 auto;
+            text-align: center;
+            font-size: @font-size-h4;
+        }
+        .icon {
+            height: @dialog-share-icon-height;
+            background-size: contain !important;
+        }
+        &.weibo {
+            .icon {
+                background: url(../../images/icon_weibo.png) no-repeat center center;
+            }
+        }
+        &.pengyq {
+            .icon {
+                background: url(../../images/icon_weixin_pyq.png) no-repeat center center;
+            }
+        }
+        &.weixin {
+            .icon {
+                background: url(../../images/icon_weixin_hy.png) no-repeat center center;
+            }
+        }
+    }
+}

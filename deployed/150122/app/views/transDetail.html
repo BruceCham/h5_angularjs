@@ -1,0 +1,32 @@
+<div ng-controller="TransDetailCtrl" class="trans-detail-page">
+    <div ng-class="{'earnings-no-data':true, 'hide':isNoData}">
+        <img ng-src="{{isNoData_img}}" class="img-responsive" alt="Responsive image">
+        <p class="no-data-msg">最近无账单明细</p>
+    </div>
+    <div ng-class="{'trans-detail-list':true, 'hide':hideTransContainer}">
+        <ul class="list-unstyled trans-detail-list container-fluid">
+            <li ng-repeat="transDetail in tradeInfos">
+                <div class="">
+                    <div>
+                        <div class="col-xs-6">
+                            <span class="trans-detail-target" data-ng-bind="transDetail.tradeTypeDesc">
+    							</span>
+                        </div>
+                        <div class="col-xs-6">
+                            <span class="trans-detail-income-amt pull-right">
+    								<span class="income-amt-integer" data-ng-bind="transDetail.tradeAmount[0]"></span>
+                            <sup class="income-amt-decimal" data-ng-bind="transDetail.tradeAmount[1]"></sup>
+                            </span>
+                        </div>
+
+                    </div>
+                    <div>
+                        <span class="trans-detail-date" data-ng-bind="dateFormat(transDetail.tradeDate, transDetail.tradeTime)"></span>
+                        <span class="pull-right trans-detail-status" data-ng-bind="transDetail.tradeStatusDesc"></span>
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+</div>

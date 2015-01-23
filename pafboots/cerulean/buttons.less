@@ -1,0 +1,37 @@
+@bootstrap: "../bower_components/bootstrap/less/";
+@import "variables.less";
+@import "mixins.less";
+//
+// Buttons
+// --------------------------------------------------
+@import "@{bootstrap}buttons.less";
+.btn {
+    .button-size(@padding-base-vertical;
+    @padding-base-horizontal;
+    @font-size-large;
+    @line-height-base;
+    @border-radius-base);
+    // add top bottom 20px margin.
+    &.btn-alone {
+        margin-top: @btn-alone-margin;
+        margin-bottom: @btn-alone-margin;
+    }
+    // override button disabled status.
+    &.disabled, &[disabled], fieldset[disabled] & {
+        cursor: @cursor-disabled;
+        pointer-events: none; // Future-proof disabling of clicks
+        .opacity(1);
+        background-color: @btn-link-disabled-bg-color;
+        color: @btn-link-disabled-color;
+        border-color: darken(@btn-link-disabled-bg-color, 3%);
+    }
+}
+// for two button layout 50% left, 50% right.
+.col-xs-6 {
+    &:nth-child(1) {
+        padding-right: @btn-alone-margin/2;
+    }
+    &:nth-child(2) {
+        padding-left: @btn-alone-margin/2;
+    }
+}

@@ -1,0 +1,36 @@
+@bootstrap: "../bower_components/bootstrap/less/";
+@import "variables.less";
+@import "mixins.less";
+@envsetting-height: 40px;
+.envsetting {
+    min-height: @envsetting-height; // Ensure a navbar always shows (e.g., without a .navbar-brand in collapsed mode)
+    border: 1px solid #6C6E70;
+    border-left: 0;
+    border-right: 0;
+    font-size: @font-size-large;
+    line-height: @envsetting-height;
+    padding: 0 10px;
+    position: relative;
+    .gosetting {
+        position: absolute;
+        right: 0;
+        text-align: center;
+        width: 100px;
+        background: #ccc;
+        border-left: 1px solid #6C6E70;
+    }
+}
+.envsetting-list {
+    height: 70%;
+    width: 80%;
+    overflow-y: scroll;
+    margin: 15% auto;
+    border: 1px solid #A5A5A5;
+    box-shadow: 0 0 6px rgba(120,121,122,0.8);
+    li {
+        height: 60px;
+        line-height: 60px;
+        padding-left: 30px;
+        border-bottom: 1px solid #e5e5e5;
+    }
+}

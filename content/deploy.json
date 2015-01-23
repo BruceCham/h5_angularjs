@@ -1,0 +1,9 @@
+{
+    "name": "built `content`..",
+    "target": "content/",
+    "ignoreMinify": true,
+    "assets": ["image/"],
+    "output": {
+        "assets": "./"
+    }
+}

@@ -1,0 +1,102 @@
+@theme: "../../../pafboots/cerulean/";
+@import (reference) "@{theme}variables.less";
+@import (reference) "@{theme}utilities.less";
+
+.earnings-page {
+    font-size: @font-size-base;
+    color: @gray-light;
+    .head{
+        padding-top: 10px;
+    }
+    .total-amt-text{
+        font-size: 28px;
+    }
+    .earnings-graph{
+        width: 100%;
+        margin-top: 20px;
+    }
+    .container{
+        padding-top: 20px;
+        min-height: 200px;
+        -webkit-mask: -webkit-gradient(linear,0% 0%, 0% 100%, from(rgba(0,0,0,1)), to(rgba(0,0,0,.2)));
+    }
+    .total-amt-text,
+    .total-amt{
+        color: #fff;
+    }
+    .total-amt{
+        font-size: @font-size-h1;
+        font-weight: 200;
+    }
+    .earnings-date{
+        padding-right: 5px;    
+        width: 15%;
+    }
+    .earnings-y{
+        width: 1px;
+        background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #474646), color-stop(1, #b4b4b3));
+    }
+    .earnings-y i{
+        position: relative;
+        top: -14px;
+        left: -5px;
+        font-size: 12px;
+        font-style: normal;
+    }
+    .earnings-date-list li, 
+    .earnings-amt-list li{
+        height: 40px;
+        line-height: 40px;
+    }
+    .earnings-date-list li.graph-title,
+    .earnings-amt-list li.graph-title{
+        height: 24px;
+        line-height: 12px;
+        margin-top: -5px;
+        color: @gray;
+    }
+    .earnings-date-list li.graph-title{
+        visibility: hidden;
+    }
+    .earnings-date-list li{
+        float: right;
+    }
+    .earnings-date-list li:nth-child(2){
+        text-align: right;
+    }
+    .earnings-amt{
+        padding-left: 10px;  
+        width: 84%;
+    }
+    .percentage-bar{
+        height: 30px;
+        background-color: rgb(200, 200, 200);
+        margin-top: 5px;
+    }
+    .percentage-bar-latest{
+        background-color: #ff8400;
+    }
+    .amt-money-latest{
+        color: #ff8400;
+    }
+    .amt-money{
+        margin-left: 5px;
+        font-size: @font-size-large;
+        font-weight: 200;
+    }
+    .earnings-no-data img{
+        margin:0 auto;
+        width: 50%;
+        margin-top: 50px;
+    }
+    .no-data-msg{
+        font-size: @font-size-small;
+        color: @gray-lighter;
+        text-align: center;
+        margin-top: 20px;
+    }
+    span + sup{
+        margin-left: -6px;
+        font-size: 65%;
+    }
+}

@@ -1,0 +1,21 @@
+<div ng-controller="PaySuccessCtrl" class="pay-success-page container-fluid">
+    <div class="pay-success-result">
+        <img class="pay-success-result-img" ng-src="{{pay_status_img}}"></img>
+        <span>转出成功</span>
+        <p class="text-right payAmt">
+            <span class="pay-success-integer" data-ng-bind="amount[0]"></span>
+            <sup class="pay-success-decimal" data-ng-bind="amount[1]"></sup>
+        </p>
+    </div>
+    <div ng-class="{'pay-success-startEarnings':true, 'hide': isModelType1}">
+        预计5分钟内到账
+    </div>
+    <div ng-class="{'pay-success-startEarnings':true, 'hide': isModelType2}">
+        预计30分钟内到账(由于银行系统原因，20万以上大额交易可能延时1至3个工作日到账)
+    </div>
+    <img ng-src="{{cma_happy}}" class="img-responsive" alt="Responsive image">
+
+    <div class="pay-success-btns">
+        <button type="button" ng-click="goBack()" class="btn btn-alone btn-primary btn-block">{{merchantName}}</button>
+    </div>
+</div>

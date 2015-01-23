@@ -1,0 +1,17 @@
+.captchaPage {
+  padding-top: 20px;
+}
+.captchaPage p > small {
+  font-size: 14px;
+  color: #353535;
+}
+.captchaPage .container-phone {
+  padding: 0 12px;
+}
+.captchaPage .container-phone .phone-num {
+  font-size: 22px;
+  font-weight: 200;
+}
+.captchaPage .container-fluid {
+  margin-top: 12px;
+}

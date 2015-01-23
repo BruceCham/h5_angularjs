@@ -1,0 +1,38 @@
+@bootstrap: "../bower_components/bootstrap/less/";
+@import "variables.less";
+@import "mixins.less";
+//
+// Panels
+// --------------------------------------------------
+@import (reference) "@{bootstrap}panels.less";
+// Base class
+.panel {
+    margin-bottom: @line-height-computed;
+    background-color: @panel-bg;
+    border: 1px solid transparent;
+    border-radius: @panel-border-radius;
+    .box-shadow(0 1px 1px rgba(0, 0, 0, .05));
+}
+// Panel contents
+.panel-body {
+    .panel-body();
+}
+// Optional heading
+.panel-heading {
+    .panel-heading();
+}
+// Within heading, strip any `h*` tag of its default margins for spacing.
+.panel-title {
+    .panel-title();
+}
+// Optional footer (stays gray in every modifier class)
+.panel-footer {
+    .panel-footer();
+}
+// Contextual variations
+.panel-default {
+    .panel-default();
+}
+.panel-primary {
+    .panel-primary();
+}

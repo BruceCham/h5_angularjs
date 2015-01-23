@@ -1,0 +1,18 @@
+<div ng-controller="CaptchaCtrl" class="captchaPage">
+    <div ng-show="hasSent" class="container-phone">
+        <p>验证码已发送至手机</p>
+        <p class="phone-num">{{mobilenum}}</p>
+    </div>
+    <form name="otpForm">
+        <div otp-suites auto-send-otp="true" extra-data="otpExtraData" trigger-send="triggerSend" otp-input="smsCode" otp-result="otpResult" phone="otpPhoneNumber" hide-mobile-control="true" has-otp-passed="hasOtpPassed('hasPassed')"></div>
+
+        <div class="form-group container-fluid">
+            <a href="{{merchantInfo.protocolUrl}}">《{{merchantInfo.merchantName}}产品协议》</a>
+            <br/>
+            <a href="{{merchantInfo.fundProtocolUrl}}">《{{merchantInfo.fundProtocolName}}》</a>
+        </div>
+        <div class="container-fluid">
+            <button class="btn btn-primary btn-alone btn-block" ng-click="handleCaptcha(otpForm.$valid)" ng-disabled="!otpForm.$valid" type="button">同意协议并开通</button>
+        </div>
+    </form>
+</div>

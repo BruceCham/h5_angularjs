@@ -1,0 +1,27 @@
+@theme: "../../../pafboots/cerulean/";
+@import (reference) "@{theme}variables.less";
+@import (reference) "@{theme}utilities.less";
+
+.pay-success-page {
+	font-size: @font-size-base;
+	color: @gray-light;
+	.pay-success-result-img{
+		width: 25px;
+		height: 26px;
+	}
+	.pay-success-result{
+		font-size: @font-size-h3;
+		color: #000;
+	}
+	.img-responsive{
+		margin-top: 15px;
+	}
+	.payAmt{
+		font-size: @font-size-h1;
+		font-weight: 200;
+	}
+	span + sup{
+		margin-left: -6px;
+		font-size: 70%;
+	}
+}

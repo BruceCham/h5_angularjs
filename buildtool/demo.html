@@ -1,0 +1,40 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Seajs build engine demo</title>
+    <script type="text/javascript" src="enyo.js"></script>
+    <script type="text/javascript" src="sitetheme_1/package.js"></script>
+    <script type="text/javascript" id="seajsnode" src="deploy/sea-modules/seajs/2.3.0/sea.js"></script>
+    <script type="text/javascript">
+    seajs.config({
+        base: "http://localhost:20000/deploy/sea-modules",
+        // debug: true,
+        // 路径配置用来跨目录调用.
+        paths: {
+            // "jquery": "http://live/root/path",
+        },
+        // / 文件编码
+        charset: 'utf-8',
+        // 别名配置,注意别名的 VALUE 只能为sea-module define 的ID 如下 jquery,只能与sea-modules/ 下面的路径
+        // define("jquery/jquery/1.10.1/jquery", [], function () { return jQuery; } );保持一致.
+        alias: {
+            // "seajs-debug": "seajs/seajs-debug/1.1.1/seajs-debug",
+            "jquery": "jquery/1.10.2/jquery", //=={jquery=paths.jquery}/jquery/1.10.1/jquery
+            "jquery-debug": "jquery/1.10.1/jquery-debug"
+        }
+    });
+    </script>
+</head>
+
+<body>
+    <script type="text/javascript">
+    seajs.use(["jquery", "product/1.0.0/index-debug"], function($, product) {
+    	$(function () {
+            console.log(product);
+        })
+    });
+    </script>
+</body>
+
+</html>

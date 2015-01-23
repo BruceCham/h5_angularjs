@@ -1,0 +1,34 @@
+<div ng-controller="IncomeSuccessCtrl" class="income-success-page container-fluid">
+    <div class="income-success-result">
+        <img class="income-success-result-img" ng-src="{{income_status_img}}"></img>
+        <span class="income-success-text">转入成功</span>
+        <p class="text-right income-amt">
+            <span class="income-success-integer" data-ng-bind="amount[0]"></span>
+            <sup class="income-success-decimal" data-ng-bind="amount[1]"></sup>
+        </p>
+    </div>
+    <div class="income-success-startEarnings">
+        <span>{{gainsDate}}</span>
+        (<span data-ng-bind="{{gainsMonAndDay}}"></span>)
+        开始计算收益
+    </div>
+    <div class="income-success-getEarnings">
+        {{arrivalGainsDate}}
+        (<span data-ng-bind="{{arrivalMonAndDay}}"></span>)
+        收益到账
+    </div>
+    <img ng-src="{{cma_happy}}" class="img-responsive" alt="Responsive image">
+
+    <div class="btn-group-divide">
+        <div class="col-xs-6">
+            <button type="button" ng-click="goBack()" class="btn btn-alone btn-default btn-block btn-pay">
+                {{merchantName}}
+            </button>
+        </div>
+        <div class="col-xs-6">
+            <button type="button" ng-click="doIncome()" class="btn btn-alone btn-primary btn-block btn-income">
+                继续转入
+            </button>
+        </div>
+    </div>
+</div>

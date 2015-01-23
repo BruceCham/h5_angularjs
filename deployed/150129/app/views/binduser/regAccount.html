@@ -1,0 +1,19 @@
+<div ng-controller="RegAccountCtrl" class="reg-account-page">
+    <form name="regAccountForm">
+        <div class="input-group border-collapse input-group-disabled" data-ng-class="{disabled: userData.idCardNumY}">
+            <span class="input-group-addon" data-ng-bind="userData.realNameY"></span>
+            <input type="text" class="form-control" data-ng-model = "userData.idCardNumY" ng-readonly="userData.idCardNumY" />
+        </div>
+        <div otp-suites auto-send-otp="true" extra-data="otpExtraData" trigger-send="triggerSend" otp-input="smsCode" otp-result="otpResult" phone="otpPhoneNumber" hide-mobile-control="false" has-otp-passed="hasOtpPassed('hasPassed')"></div>
+        <div class="form-group container-fluid">
+            <a href="https://1qianbao.com/m/agreements/paymentServiceProtocol">《壹钱包用户开通协议》</a>
+            <a href="{{merchantInfo.protocolUrl}}">《{{merchantInfo.merchantName}}产品协议》</a>
+            <br/>
+             <a href="{{merchantInfo.fundProtocolUrl}}">《{{merchantInfo.fundProtocolName}}》</a>
+        </div>
+        <div class="container-fluid btn-container">
+            <button type="button" class="btn btn-primary btn-block" ng-disabled="!regAccountForm.$valid" data-ng-click="checkUserInfo()">同意协议并开通</button>
+        </div>
+    </form>
+    <p class="bottom-tips">本产品由壹钱包提供，我们将为你开通壹钱包账户</p>
+</div>

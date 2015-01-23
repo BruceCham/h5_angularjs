@@ -1,0 +1,30 @@
+{
+  "name": "seajs_web_solution",
+  "version": "1.0.0",
+  "description": "an web front end uniform solution based on seajs libaray",
+  "main": "Gruntfile.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tianyingchun/seajs_web_solution.git"
+  },
+  "keywords": [
+    "seajs web solution",
+    "web front end solution",
+    "multiple pages web framework",
+    "seajs",
+    "solution"
+  ],
+  "author": "tianyingchun",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/tianyingchun/seajs_web_solution/issues"
+  },
+  "homepage": "https://github.com/tianyingchun/seajs_web_solution",
+  "devDependencies": {
+    "commander":"*",
+    "clean-css": "2.x",
+    "fs-extra": "*",
+    "ansicolors":"*",
+    "uglify-js":"*"
+  }
+}

@@ -1,0 +1,126 @@
+@bootstrap: "../bower_components/bootstrap/less/";
+
+@import "variables.less";
+@import "mixins.less";
+
+//
+// Input groups
+// --------------------------------------------------
+
+@import (reference) "@{bootstrap}forms.less";
+@import (reference) "@{bootstrap}input-groups.less";
+
+.input-group,.input-group-inner {
+	.input-group();
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding-top: 1px;
+	background:#fff;
+	width: 100%;
+	position: relative;
+	z-index: 80;
+	// height:@input-group-height;
+	border-top: 1px solid @input-group-border-color;
+	border-bottom: 1px solid @input-group-border-color;
+	&.disabled{
+		cursor: @cursor-disabled;
+        background-color: @input-bg-disabled;
+        opacity: 1; // iOS fix for unreadable disabled content
+	}
+	// while multiple texbox vertical asign, avoid border collapse.
+	&.border-collapse{
+		+ .input-group {
+            border-top-width: 0;
+        }
+	}
+	.form-control{
+  		.input-size(@input-height-large+8; @padding-large-vertical+4; @padding-large-horizontal; @font-size-large; @line-height-large; @input-border-radius-large);
+	}
+	.input-group-inner{
+		border:0;
+		margin: 0;
+		height: (@input-group-height)-@padding-large-vertical;
+		.form-control{
+			padding-top: @padding-large-vertical/2;
+			height: @input-height-base;
+			padding-bottom: @padding-large-vertical/2;
+		}
+	}
+	.small{
+		display: block;
+		color:#6d6d6d;
+		margin-top: @padding-large-vertical;
+		padding-left: 12px;
+	}
+	.tips{
+		color:#fff;
+		text-align: right;
+		width:100%;
+		height: 14px;
+		padding-right: 2em;
+		display:block;
+		font-size: ceil((@font-size-small* 0.85)); 
+		background-color: rgba(255, 0, 36,0.6);
+		position: absolute;
+		bottom: 0;
+		left:0;
+		z-index: 90; 
+		.caret {
+			width: 0;
+			height: 0;
+			vertical-align: middle;
+			border-bottom:   @caret-width-base solid rgba(255, 0, 36,0.6);
+			border-right: @caret-width-base solid transparent;
+			border-left: @caret-width-base solid transparent;
+			position: absolute;
+			right: 4em;
+			top: -@caret-width-base;
+			z-index: 100; 
+		}
+		// primary.
+		&.tips-primary{
+			color:#fff;
+			background-color: @brand-primary;
+			.caret {
+				border-bottom-color:@brand-primary;
+			}
+		}
+		// maybe info
+	}
+
+}
+
+// Display as table-cell
+// -------------------------
+.input-group-addon,
+.input-group-btn,
+.input-group .form-control {
+  display: table-cell;
+
+  &:not(:first-child):not(:last-child) {
+    border-radius: 0;
+  }
+}
+// Addon and addon wrapper for buttons
+.input-group-addon,
+.input-group-btn {
+  width: 1%;
+  white-space: nowrap;
+  vertical-align: middle; // Match the inputs
+}
+// Text input groups
+// -------------------------
+.input-group-addon {
+  padding: @padding-base-vertical @padding-base-horizontal;
+  font-size: @font-size-large;
+  font-weight: normal;
+  line-height: 1;
+  color: @gray-light;
+  text-align: left; 
+
+  // Nuke default margins from checkboxes and radios to vertically center within.
+  input[type="radio"],
+  input[type="checkbox"] {
+    margin-top: 0;
+  }
+}

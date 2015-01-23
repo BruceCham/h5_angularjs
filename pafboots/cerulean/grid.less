@@ -1,0 +1,30 @@
+@bootstrap: "../bower_components/bootstrap/less/";
+
+@import "variables.less";
+@import "mixins.less";
+
+//
+// Grid system
+// --------------------------------------------------
+
+@import (reference) "@{bootstrap}grid.less";
+
+// Fluid container
+.container-fluid {
+  .container-fluid();
+}
+
+// Row
+//
+// Rows contain and clear the floats of your columns.
+
+.row {
+  .row;
+}
+
+// Extra small grid
+//
+// Columns, offsets, pushes, and pulls for extra small devices like
+// smartphones.
+
+.make-grid(xs);

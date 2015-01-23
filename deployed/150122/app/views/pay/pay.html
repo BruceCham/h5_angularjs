@@ -1,0 +1,26 @@
+<div ng-controller="PayCtrl" class="pay-page">
+	<p class="container-fluid pay-page-subTitle">
+		转出至<span data-ng-bind="merchantAccountName"></span>
+	</p>
+	<form name="payForm">
+		<div class="input-group">
+			<span for="" class="input-group-addon">转出金额</span>
+			<input type="number" name="payAmount"  data-ng-model="amount" class="form-control" placeholder="请输入金额" required fn-validation="checkAmoumt" >
+			<span class="tips" ng-show="payForm.payAmount.$error.payAmount">
+				<span ng-bind="payAmount_error"></span>
+				<span class="caret"></span>
+			</span>
+		</div>
+		<p class="clearfix text-right container-fluid max-amt">
+			<small>
+				本次可转出最大金额
+				<span data-ng-bind="maxAmtFormat[0]"></span>
+                <span data-ng-bind="maxAmtFormat[1]"></span>元
+            </small>
+		</p>
+		<div class="container-fluid btn-container">
+			<button type="button" class="btn btn-primary btn-block" data-ng-disabled="!payForm.$valid" data-ng-click="payConfirm()">下一步</button>
+		</div>
+		
+	</form>
+</div>

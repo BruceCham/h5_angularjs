@@ -1,0 +1,21 @@
+{
+	"name":"root",
+	"target":"./",
+	"ignoreMinify":"false",
+	"assets": ["demo.html"]
+}
+
+
+or
+
+{
+    "name": "built home root",
+    "target": "./",
+    "ignoreMinify":false,
+    "assets": ["./index.html", "favicon.ico"],
+    "output":{ 
+        "assets":"./",
+        "css":"app/app.css",
+        "js":"app/app.js"
+    }
+}

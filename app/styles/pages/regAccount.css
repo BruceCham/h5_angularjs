@@ -1,0 +1,14 @@
+.reg-account-page .account-container {
+  font-size: 18px;
+  color: #6d6d6d;
+}
+.reg-account-page .btn-container {
+  margin-top: 20px;
+}
+.reg-account-page .input-group-disabled {
+  margin-bottom: 0;
+  border: none;
+}
+.reg-account-page .container-fluid {
+  padding-top: 20px;
+}

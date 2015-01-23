@@ -1,0 +1,29 @@
+@theme: "../../../pafboots/cerulean/";
+@import (reference) "@{theme}variables.less";
+@import (reference) "@{theme}utilities.less";
+
+.view-bank-card-detail-page{
+	.bank-card-info{
+		.input-group{
+			margin-top:0;
+			margin-bottom: 0;
+		}
+		.input-group-addon{
+			width: 80px;
+		}
+		.btn{
+			margin-top:55px;
+		}
+	}
+	.send-verification-code{
+		.otp-hide{
+			display: hidden;
+		}
+		.btn{
+			margin-top:90px;
+		}
+		.otp .otp-mobile-wrapper~.input-group{
+			border-top-width: 1px;
+		}
+	}
+}

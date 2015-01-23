@@ -1,0 +1,61 @@
+<div ng-controller="HomeCtrl" class="homepage">
+    <div class="home-head container-fluid" style="background:url({{head_bg}});">
+        <p class="yesterday-income-text">昨日收益(元)</p>
+        <p class="yesterday-income">
+            <span class="yesterday-income-integer" data-ng-bind="yesterdayIncome[0]"></span>
+            <sup class="yesterday-income-decimal" data-ng-bind="yesterdayIncome[1]"></sup>
+        </p>
+    </div>
+    <div class="home-content">
+        <div class="container-fluid">
+            <p class="text-left">
+                <span class="earnings-rate-text"><span class="seven">7</span>日年化收益率&nbsp;(%)&nbsp;:
+                &nbsp;</span>
+                <span class="earnings-rate-amt">
+    				<span class="earnings-rate" data-ng-bind="ratePreWeek"></span>
+                <sup class="percent-sign">%</sup>
+                </span>
+            </p>
+            <p class="text-left total-amount-text">总金额&nbsp;(元)&nbsp;:</p>
+            <p class="text-left total-amount">
+                <span ng-click="goTransDetail()">
+                    <span class="total-amount-integer" data-ng-bind="totalAmount[0]"></span>
+                    <sup class="total-amount-decimal" data-ng-bind="totalAmount[1]"></sup>
+                </span>
+            </p>
+            <div class="income-text">
+                <div class="col-xs-6">万份收益&nbsp;(元)</div>
+                <div class="col-xs-6">累计收益&nbsp;(元)</div>
+            </div>
+
+            <div class="income-amount">
+                <div class="col-xs-6 million-income">
+                    <span data-ng-bind="millionIncome[0]">
+    					</span>
+                    <sup data-ng-bind="millionIncome[1]"></sup>
+                </div>
+                <div class="col-xs-6 accum-income">
+                    <span ng-click="goEarnings()">
+                        <span data-ng-bind="accumIncome[0]"></span>
+                        <sup data-ng-bind="accumIncome[1]"></sup>
+                    </span>
+                </div>
+
+            </div>
+            <p class="text-center contribution-company">本产品由壹钱包提供</p>
+
+            <div class="btn-group-divide">
+                <div class="col-xs-6">
+                    <button type="button" ng-click="doPay()" class="btn btn-alone btn-default btn-block btn-pay">
+                        转出
+                    </button>
+                </div>
+                <div class="col-xs-6">
+                    <button type="button" ng-click="doIncome()" class="btn btn-alone btn-primary btn-block btn-income">
+                        转入
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

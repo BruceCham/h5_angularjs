@@ -1,0 +1,74 @@
+@bootstrap: "../bower_components/bootstrap/less/";
+@import "variables.less";
+@import "mixins.less";
+// reference bootstrap minxin lib 
+.otp {
+    .show {
+        display: table !important;
+    }
+    .tips {
+        display: none;
+    }
+    .input-group {
+        margin: 0;
+    }
+    .otp-mobile-wrapper {
+        ~ .input-group {
+            border-top-width: 0;
+        }
+        &.hide {
+            + .input-group {
+                border-top-width: 1px;
+            }
+            + .otp-captcha-wrapper {
+                + .input-group {
+                    border-top-width: 1px;
+                }
+            }
+        }
+        + .otp-captcha-wrapper {
+            &.show {
+                + .input-group {
+                    border-top-width: 0;
+                }
+            }
+        }
+    }
+    .otp-captcha-wrapper {
+        display: none;
+        .form-control[type='text'] {
+            position: relative;
+            z-index: 0;
+        }
+        .captcha-image {
+            position: absolute;
+            right: 2px;
+            z-index: 10;
+            width: 70px;
+            height: 30px;
+            color: @brand-primary;
+            top: @padding-base-vertical*3-4px;
+        }
+    }
+    .otp-input-wrapper {
+        .form-control[type='text'] {
+            position: relative;
+            z-index: 0;
+        }
+        .otp-btn-send {
+            display: none;
+            position: absolute;
+            right: 0;
+            z-index: 10;
+            color: @brand-primary;
+            top: 23px-@padding-base-vertical;
+            padding: @padding-base-vertical @padding-base-horizontal;
+            &.disabled {
+                color: @gray-lighter;
+            }
+        }
+        .otp-btn-ticker {
+            .otp-btn-send;
+        }
+    }
+}
