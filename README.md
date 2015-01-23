@@ -1,3 +1,12 @@
+## user guide
+
+1. make sure that you have install nodejs
+2.
+   ```
+	install bower
+	$ > npm install -g bower
+   ```
+
 ##
 
 initialized angularjs h5 project folders
