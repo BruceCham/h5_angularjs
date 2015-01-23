@@ -8,48 +8,46 @@
     var version = window.PafH5.version;
     var appName = window.PafH5.appName;
     // defined app configurations in factory.
-    app.factory("appConfig", ["$log", "remoteApi",
-        function($log, remoteApi) {
-            return {
-                "debugModel": debugModel,
-                "version": version,
-                getAppName: function() {
-                    return appName;
-                },
-                getResourceUrl: function(resourceUrl) {
-                    // if release model && version has defined.
-                    if (!debugModel && version) {
-                        if (remoteApi.cdnRoot) {
-                            resourceUrl = remoteApi.cdnRoot + "/" + version + "/" + resourceUrl;
-                        } else {
-                            resourceUrl = version + "/" + resourceUrl;
-                        }
+    app.factory("appConfig", ["$log", "remoteApi", function($log, remoteApi) {
+        return {
+            "debugModel": debugModel,
+            "version": version,
+            getAppName: function() {
+                return appName;
+            },
+            getResourceUrl: function(resourceUrl) {
+                // if release model && version has defined.
+                if (!debugModel && version) {
+                    if (remoteApi.cdnRoot) {
+                        resourceUrl = remoteApi.cdnRoot + "/" + version + "/" + resourceUrl;
+                    } else {
+                        resourceUrl = version + "/" + resourceUrl;
                     }
-                    $log.info("getResourceUrl():", resourceUrl);
-                    return resourceUrl;
-                },
-                getTemplateUrl: function(templateUrl) {
-                    // if release model && version has defined.
-                    return this.getResourceUrl(templateUrl);
-                },
-                /**
-                 * Provider short cut to get mtp api request data.
-                 * @param  {object}  data       it will override common data.
-                 * @param  {object}  extraData  it will merge into baseData.
-                 * @param  {object}  extraData1  it will merge into baseData1.
-                 * @return {object}  return new request data.
-                 */
-                getRequestData: function(data, extraData, extraData1) {
-                    var baseData = {
-                        appId: "T-100019",
-                        clientId: "CMA_CLIENT_ID" //H5_INT_SESSION
-                    };
-                    angular.extend(baseData, data, extraData, extraData1);
-                    return baseData;
                 }
-            };
-        }
-    ]);
+                $log.info("getResourceUrl():", resourceUrl);
+                return resourceUrl;
+            },
+            getTemplateUrl: function(templateUrl) {
+                // if release model && version has defined.
+                return this.getResourceUrl(templateUrl);
+            },
+            /**
+             * Provider short cut to get mtp api request data.
+             * @param  {object}  data       it will override common data.
+             * @param  {object}  extraData  it will merge into baseData.
+             * @param  {object}  extraData1  it will merge into baseData1.
+             * @return {object}  return new request data.
+             */
+            getRequestData: function(data, extraData, extraData1) {
+                var baseData = {
+                    appId: "T-100019",
+                    clientId: "CMA_CLIENT_ID" //H5_INT_SESSION
+                };
+                angular.extend(baseData, data, extraData, extraData1);
+                return baseData;
+            }
+        };
+    }]);
     /**
      * Fot state url router provider.
      * @param  {string} templatePath template path
@@ -127,7 +125,6 @@
                     url: '/regAccount',
                     templateUrl: getRouteTemplateUrl('app/views/binduser/regAccount.html')
                 })
-
                 // xx宝首页
                 // author: peipei
                 .state('home', {
@@ -208,13 +205,11 @@
                     url: '/addNewBankCard/:tradeDirection',
                     templateUrl: getRouteTemplateUrl('app/views/bindcard/addNewBankCard.html')
                 })
-
                 // 添加银行卡
                 .state('viewSupportedBankList', {
                     url: '/viewSupportedBankList',
                     templateUrl: getRouteTemplateUrl('app/views/bindcard/viewSupportedBankList.html')
                 })
-
                 // 查看选定的帮卡详细页面，并包含OTP
                 .state('viewBankCardDetail', {
                     url: '/viewBankCardDetail/:tradeDirection',

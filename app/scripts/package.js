@@ -1,5 +1,6 @@
 enyo.depends(
 	"app.js",
+	"boots/",
 	"configs/",
 	"providers/",
 	"directives/",
