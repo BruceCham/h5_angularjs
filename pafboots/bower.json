@@ -1,11 +1,11 @@
 {
-    "name": "CMA",
+    "name": "h5_angularjs",
     "version": "0.0.1",
     "homepage": "https://github.com/tianyingchun/cma",
-    "description": "CMA",
+    "description": "h5_angularjs",
     "main": "index.html",
     "keywords": [
-        "CMA"
+        "h5_angularjs framework, h5 solution"
     ],
     "authors": [
         "terence"
@@ -20,6 +20,6 @@
         "tests"
     ],
     "dependencies": {
-        "bootstrap": "~3.3.0"
+        "bootstrap": "3.3.2"
     }
 }
