@@ -14,6 +14,14 @@ echo "npm install -> in /server for testing server dependancy! \n"
 cd ../server 
 npm install
 
+# install build tool lib depandany!
+echo "npm install -> in /buildtool lib dependancy! \n"
+cd ../buildtool 
+npm install
+
+
+
+
 
 
 

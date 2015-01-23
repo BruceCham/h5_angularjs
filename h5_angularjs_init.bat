@@ -21,4 +21,10 @@ CALL npm install
 
 CD %CWD%
 
+
+REM install build tool lib depandany!
+ECHO "npm install -> in /buildtool lib dependancy! \n"
+CD buildtool 
+CALL npm install
+
 PAUSE
