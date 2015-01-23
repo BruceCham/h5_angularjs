@@ -157,9 +157,9 @@
     // 4. check the deployed @directory and run localhost:port/index.html#/xxx to test your pages.
 
     window.PafH5 = {
-        debugModel: true,
-        version: "150122",
-        appName: "CMA",
+        debugModel: angular.isUndefined(window.debugModel) ? true : window.debugModel,
+        version: window.appVersion || "",
+        appName: window.appName || "H5 Angularjs",
         back: _h5back,
         /**
          * allow us in each page set push state

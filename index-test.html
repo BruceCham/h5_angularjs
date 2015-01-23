@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html id="ng-app" data-ng-app="CMA">
+<html id="ng-app" data-ng-app="h5_angularjs">
 
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -11,7 +11,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-touch-fullscreen" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <title>CMA</title>
+    <title><%TOKEN_APP_NAME%></title>
     <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
 </head>
 
@@ -21,8 +21,12 @@
         <!-- views will be injected here -->
         <div class="row" ui-view></div>
     </div>
-
-    <link rel="stylesheet" href="150122/app/app.css">
+    <link rel="stylesheet" href="<%TOKEN_VERSION%>/app/app.css">
+    <script type="text/javascript">
+    window.debugModel = false;
+    window.appVersion = "<%TOKEN_VERSION%>";
+    window.appName = "<%TOKEN_APP_NAME%>";
+    </script>
     <script src="150122/app/app.js"></script>
     <script src="https://ms.1qianbao.com/uba/webCollection.js"></script>
     <script type="text/javascript">
