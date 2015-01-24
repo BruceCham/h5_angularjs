@@ -30,7 +30,7 @@
         "production": {
             "apiRoot": "https://mobile.1qianbao.com/mtp-web",
             "env": "production",
-            "cdnRoot": "https://ms.1qianbao.com/h5/cma"
+            "cdnRoot": "https://ms.1qianbao.com/h5"
         },
         //-------------------------------------------------------
         //test evns.

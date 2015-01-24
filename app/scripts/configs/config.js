@@ -19,7 +19,9 @@
                 // if release model && version has defined.
                 if (!debugModel && version) {
                     if (remoteApi.cdnRoot) {
-                        resourceUrl = remoteApi.cdnRoot + "/" + version + "/" + resourceUrl;
+                        // If we provider cdn root, we need to auto add appName with cdn.
+                        // https://ms.1qianbao.com/h5 ->https://ms.1qianbao.com/h5/{cma}/{version}/{resouceURL}
+                        resourceUrl = remoteApi.cdnRoot + "/" + appName.toLowerCase() + "/" + version + "/" + resourceUrl;
                     } else {
                         resourceUrl = version + "/" + resourceUrl;
                     }
