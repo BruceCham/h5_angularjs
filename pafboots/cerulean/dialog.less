@@ -328,6 +328,15 @@ body.ngdialog-open {
     // loading dialog control styles.
     // ---------------------------------------------------------------------
     &.spinner {
+        .ngdialog-content {
+            background: transparent;
+        }
+        .modal-body {
+            position: relative;
+            width: 100%;
+            clear: both;
+            min-height: 100px;
+        }
         .loading-wrapper {
             width: @dialog-spinner-width;
             left: 50%;

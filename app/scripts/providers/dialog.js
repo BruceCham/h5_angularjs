@@ -75,7 +75,7 @@ app.factory("dialog", ["$log", "utility", "ngDialog",
                             <div class="loading-wrapper">\
                                 <div class="loading">\
                                     <div class="animator"></div>\
-                                    <div class="logo">壹</div>\
+                                    <div class="logo"></div>\
                                 </div>\
                                 <div class="message">' + tipTxt + '</div>\
                             </div>\
