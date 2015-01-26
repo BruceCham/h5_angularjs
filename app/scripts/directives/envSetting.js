@@ -5,18 +5,38 @@
      */
     app.directive("envSetting", ["$log", "$compile", function($log, $compile) {
 
+        var CONTROL_VISIBILITY = "pafh5_envSetting_visibility";
+
+        function setControlVisibility(isDisplay) {
+            if (isDisplay) {
+                localStorage.setItem(CONTROL_VISIBILITY, "1");
+            } else {
+                localStorage.setItem(CONTROL_VISIBILITY, "0");
+            }
+        };
+
+        function getControlVisibility() {
+            var isVisible = localStorage.getItem(CONTROL_VISIBILITY);
+            if (isVisible === null || typeof isVisible === "undefined") {
+                isVisible = "1";
+            }
+            return (isVisible == "1");
+        };
         var getTemplate = function(envType) {
             var template = '<div class=\"envsetting\">\
                         <span>当前环境:<span>{{currentEnv.env}}</span></span>\
                         <span ng-click="doEnvSetting()" class=\"gosetting\">去设置</span>\
+                        <span ng-click="doClose()" class=\"close\">关闭</span>\
                     </div>';
-
+            var isVisibile = getControlVisibility();
             switch (envType) {
                 case 'production':
                     template = "";
                     break;
             }
-
+            if (!isVisibile && envType != "production") {
+                template = "";
+            }
             return template;
         }
 
@@ -28,6 +48,12 @@
             var envType = _currEnv && _currEnv.env && _currEnv.env.toLowerCase();
 
             element.html(getTemplate(envType));
+
+            // close setting. if we need to recovery
+            scope.doClose = function() {
+                element.remove();
+                setControlVisibility(false);
+            };
 
             $compile(element.contents())(scope);
         };
@@ -75,7 +101,6 @@
                     newClass: "dialog-envsetting"
                 });
             };
-
         }];
         return {
             restrict: 'AE',
