@@ -4,7 +4,7 @@
 // reference bootstrap minxin lib 
 .otp {
     .show {
-        display: table !important;
+        display: table-cell !important;
     }
     .tips {
         display: none;
@@ -12,7 +12,7 @@
     .input-group {
         margin: 0;
     }
-    .input-group-addon{
+    .input-group-addon {
         min-width: 85px;
     }
     .otp-mobile-wrapper {
@@ -39,34 +39,20 @@
     }
     .otp-captcha-wrapper {
         display: none;
-        .form-control[type='text'] {
-            position: relative;
-            z-index: 0;
+        &.show {
+            display: table !important;
         }
         .captcha-image {
-            position: absolute;
-            right: 2px;
-            z-index: 10;
             width: 70px;
             height: 30px;
             color: @brand-primary;
-            top: @padding-base-vertical*3-4px;
         }
     }
     .otp-input-wrapper {
-        .form-control[type='text'] {
-            position: relative;
-            z-index: 0;
-            // keep padding right to send button
-            padding-right: 50px;
-        }
         .otp-btn-send {
             display: none;
-            position: absolute;
-            right: 0;
-            z-index: 10;
+            cursor: pointer;
             color: @brand-primary;
-            top: 23px-@padding-base-vertical;
             padding: @padding-base-vertical @padding-base-horizontal;
             &.disabled {
                 color: @gray-lighter;

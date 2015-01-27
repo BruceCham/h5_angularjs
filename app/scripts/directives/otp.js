@@ -409,14 +409,14 @@ app.run(['$templateCache', function($templateCache) {
             <div ng-class="{\'input-group otp-captcha-wrapper\':true,\'disabled\':captchaInputDisabled, \'show\':showCaptchaControl}">\
                 <span class="input-group-addon">图片码</span>\
                 <input type="text" ng-readonly="captchaInputDisabled" captcha-validation="errors.captcha" class="form-control" ng-model="captchaInput" ng-change="captchaInputValueChanged()" placeholder="请输入图片验证码">\
-                <img class="captcha-image" ng-src="{{captcha.captchaUrl}}" ng-click="refreshCaptcha()">\
+                <span class="input-group-btn"><img class="captcha-image input-group-btn" ng-src="{{captcha.captchaUrl}}" ng-click="refreshCaptcha()"></span>\
                 <span ng-class="{\'show\':errors.captcha,\'tips\':true}">{{errors.captcha}}<span class="caret"></span></span>\
             </div>\
             <div class="input-group otp-input-wrapper">\
                 <span class="input-group-addon">验证码</span>\
                 <input type="text" required ng-model="otpInput" class="form-control" placeholder="请输入短信验证码">\
-                <span class="otp-btn-ticker" ng-class="{\'show\':running,\'otp-ticker\':true}">{{tickerText}}</span>\
-                <span class="otp-btn-send" ng-class="{\'show\':!running,\'otp-btn-send\':true,\'disabled\':errors.phone}" ng-click="trySendOtp()">发送</span>\
+                <span class="input-group-btn otp-btn-ticker" ng-class="{\'show\':running,\'otp-ticker\':true}">{{tickerText}}</span>\
+                <span class="input-group-btn otp-btn-send" ng-class="{\'show\':!running,\'otp-btn-send\':true,\'disabled\':errors.phone}" ng-click="trySendOtp()">发送</span>\
                 <span ng-class="{\'show\':errors.otp,\'tips\':true}">{{errors.otp}}<span class="caret"></span></span>\
             </div>\
             <div ng-transclude></div>\
