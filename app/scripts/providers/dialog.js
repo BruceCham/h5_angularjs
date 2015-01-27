@@ -11,7 +11,7 @@ app.factory("dialog", ["$log", "utility", "ngDialog",
             alert: function(bodyHtml, config) {
                 config = config || {};
                 var bodyFontSize = 'text-' + (config.fontSizeClass || 'md');
-                var btnText = config.btnText || "关闭";
+                var btnText = config.btnText || "确定";
                 var $scope = config.scope;
                 var preCloseCallback = config.preCloseCallback;
 
