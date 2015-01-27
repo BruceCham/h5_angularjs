@@ -4,7 +4,7 @@
 app.controller("MainCtrl", ["$scope", "$log",
     function($scope, $log) {
 
-        $scope.pageTitle = "CMA";
+        $scope.pageTitle = "";
 
         // provider api for all child page, set individuation document title.
         $scope.setPageTitle = function(newTitle) {
@@ -12,7 +12,7 @@ app.controller("MainCtrl", ["$scope", "$log",
         };
 
         $scope.$watch("pageTitle", function(newVal, oldVal) {
-            document.title = newVal;
+            document.title = newVal || "";
         });
     }
 ]);
