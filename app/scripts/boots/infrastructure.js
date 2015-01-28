@@ -121,8 +121,6 @@
         var data = config.data || null;
         var behavior = config.behavior || "";
 
-        // get cache index page url.
-        var indexStates = this.getState("index") || [];
 
         // current hash index.html#/index?token
         // currentHash should be /index TODOO...
@@ -131,6 +129,9 @@
         if (currentHash.indexOf("#") === 0) {
             currentHash = currentHash.substr(1);
         }
+        // get cache index page url.
+        var indexStates = this.getState("index") || [];
+        
         var hasExitedIndexHashMap = false;
         for (var i = 0; i < indexStates.length; i++) {
             var curr = indexStates[i];
@@ -188,11 +189,10 @@
             } catch (e) {}
         },
         getState: function(name, hash) {
-            var cachedHash = _cachedHash[name];
-            var find = null;
-            if (cachedHash) {
-                for (var i = 0; i < cachedHash.length; i++) {
-                    var item = cachedHash[i];
+            var find = _cachedHash[name];
+            if (find && hash) {
+                for (var i = 0; i < find.length; i++) {
+                    var item = find[i];
                     if (item.hash === hash) {
                         find = item;
                         break;

@@ -1,23 +1,25 @@
 @bootstrap: "../bower_components/bootstrap/less/";
 // reference bootstrap minxin lib 
 @import (reference) "@{bootstrap}mixins.less";
-
 // override the vendor-prefixes.
 .placeholder(@color, @font-size) {
     &::-moz-placeholder {
         color: @color;
         font-size: @font-size;
-        line-height: 1.7em;
+        vertical-align: middle;
+        line-height: (@input-height-base)-@padding-base-vertical*2;
         opacity: 1; // See https://github.com/twbs/bootstrap/pull/11526
     }
     &:-ms-input-placeholder {
         color: @color;
-        line-height: 1.7em;
+        vertical-align: middle;
+        line-height: (@input-height-base)-@padding-base-vertical*2;
         font-size: @font-size;
     } // Internet Explorer 10+
     &::-webkit-input-placeholder {
         color: @color;
-        line-height: 1.7em;
+        vertical-align: middle;
+        line-height: (@input-height-base)-@padding-base-vertical*2;
         font-size: @font-size;
     } // Safari and Chrome
 }
